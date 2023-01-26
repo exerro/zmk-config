@@ -9,11 +9,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define LDEF 0
-#define LSYM 1
-#define LNAV 2
-#define LALT 3
-#define LFUN 4
+#define LYDEF 0
+#define LYSYM 1
+#define LYNAV 2
+#define LYALT 3
+#define LYFUN 4
 
 &mt {
     // flavor = "tap-preferred";
@@ -78,10 +78,10 @@
         // LDEF
         default_layer {
             bindings = <
-            &kp Q       &kp W  &kp E  &kp R     &kp T      &kp Y    &kp U  &kp I     &kp O    &kp P
-            &kp A       &kp S  &kp D  &kp F     &kp G      &kp H    &kp J  &kp K     &kp L    &kp QUOT
-            &mt LSFT Z  &kp X  &kp C  &kp V     &kp B      &kp N    &kp M  &kp CMMA  &kp DOT  &mt LSFT RET
-                                      &kp BKSP  &kp SPC    &kp RET  &to LSYM
+            &kp Q       &kp W  &kp E  &kp R     &kp T            &kp Y    &kp U      &kp I     &kp O    &kp P
+            &kp A       &kp S  &kp D  &kp F     &kp G            &kp H    &kp J      &kp K     &kp L    &kp QUOT
+            &mt LSFT Z  &kp X  &kp C  &kp V     &kp B            &kp N    &kp M      &kp CMMA  &kp DOT  &mt LSFT RET
+                                      &kp BKSP  &lt LYALT SPC    &kp RET  &to LYSYM
             >;
         };
 
