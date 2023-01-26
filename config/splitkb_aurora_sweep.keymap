@@ -176,7 +176,7 @@
             &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp LBKT            &kp RBKT         &kp PLUS          &eqprcnt            &dlrpnd    &amppipe  &kp UNDER
             &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp LPAR            &kp RPAR         &kp MINUS         &kp APOS            &kp GRAVE  &qstexcl  &flshbslh
             &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp LBRC            &kp RBRC         &atrkcrt          &hshat              &kp CMMA   &kp DOT   &kp SCLN
-                                             &mo_to LYDEF LYDEF  &mt LCTLR SPC    &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
+                                             &mo_to LYDEF LYDEF  &mt LCTRL SPC    &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
             >;
         };
 
@@ -186,7 +186,7 @@
             &kp N  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &to LYDEF     &kp LCTL    &kp SPC    &mo 2
+                                           &to LYDEF     &kp LCTRL    &kp SPC    &mo 2
             >;
         };
 
@@ -196,7 +196,7 @@
             &kp A  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &to LYDEF     &kp LCTL    &kp SPC    &mo 2
+                                           &to LYDEF     &kp LCTRL    &kp SPC    &mo 2
             >;
         };
 
@@ -206,7 +206,7 @@
             &kp F  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &mo 3     &kp LCTL    &kp SPC    &mo 2
+                                           &mo 3     &kp LCTRL    &kp SPC    &mo 2
             >;
         };
     };
