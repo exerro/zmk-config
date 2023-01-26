@@ -20,15 +20,8 @@
     // tapping_term_ms = <200>;
 };
 
-// Please work!
-// &spi1 {
-//     led_strip {
-//         chain-length = <7>;
-//     };
-// };
-
 &led_strip {
-    chain-length = <8>;
+    chain-length = <23>;
 };
 
 / {
@@ -51,9 +44,9 @@
             bindings = <&mo>, <&to>;
         };
 
-        kp_sk: behaviour_mp_sk {
+        kp_sk: behaviour_kp_sk {
             compatible = "zmk,behavior-hold-tap";
-            label = "ctrl_nav";
+            label = "kp_sk";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
@@ -152,7 +145,7 @@
 // [   Q   ] [   W   ] [   F   ] [   P   esc   B   ]    [   J   bsp   L   ] [   U   ] [   Y   ] [   _   ]
 // [   A   ] [   R   ] [   S   ] [   T   tab   G   ]    [   M   ret   N   ] [   E   ] [   I   ] [   O   ]
 // [   Z   ] [   X   ] [   C   ] [   D   ] [   V   ]    [   K   ] [   H   ] [  , <  ] [  . >  ] [  ; :  ]
-//                               [ LYNAV ] [ SPACE ]    [ shift ] [ LYSYM ]
+//                               [ LYSYM ] [ SPACE ]    [ shift ] [ LYNAV ]
 //                                            ctrl        shift
 
         default_layer {
@@ -160,7 +153,7 @@
             &kp Q  &kp W  &kp F  &kp P               &kp B            &kp J                 &kp L               &kp U     &kp Y    &kp UNDER
             &kp A  &kp R  &kp S  &kp T               &kp G            &kp M                 &kp N               &kp E     &kp I    &kp O
             &kp Z  &kp X  &kp C  &kp D               &kp V            &kp K                 &kp H               &kp CMMA  &kp DOT  &kp SCLN
-                                 &mo_to LYNAV LYNAV  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYSYM LYSYM
+                                 &mo_to LYSYM LYSYM  &mt LCTRL SPC    &kp_sk QMARK D  &mo_sl LYNAV LYNAV
             >;
         };
 
