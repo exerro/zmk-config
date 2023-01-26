@@ -33,13 +33,13 @@
 
 / {
     behaviours {
-        ctrl_nav {
+        ctrl_nav: ctrl_nav {
             compatible = "zmk,behavior-hold-tap";
             label = "ctrl_nav";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&to LYNAV>;
+            bindings = <&kp LSHIFT>, <&sl LYNAV>;
         };
     };
 
@@ -56,7 +56,6 @@
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&kp TAB>;
-        };
         };
         
         combo_backspace {
