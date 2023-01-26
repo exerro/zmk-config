@@ -79,7 +79,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "HASH_AT";
             #binding-cells = <0>;
-            bindings = <&kp NUSH>, <&kp AT>;
+            bindings = <&kp NUHS>, <&kp AT>;
             mods = <(MOD_LSFT)>;
         };
     };
@@ -132,18 +132,18 @@
         };
 
 // LYSYM (WIP)
-// [   &   ] [   `   ] [   [   ] [   ]   ] [  = %  ]    [   +   ] [   4   ] [   5   ] [   6   ] [   \   ]
-// [  ' "  ] [   ~   ] [   (   ] [   )   ] [  ? !  ]    [   -   ] [   1   ] [   2   ] [   3   ] [   /   ]
-// [   ^   ] [  $ £  ] [   {   ] [   }   ] [  # @  ]    [   *   ] [   7   ] [   8   ] [   9   ] [   |   ]
+// [   &   ] [   `   ] [  = %  ] [   [   esc   ]   ]    [   +   bsp   4   ] [   5   ] [   6   ] [   \   ]
+// [  ? !  ] [   ~   ] [  ' "  ] [   (   tab   )   ]    [   -   ] [   1   ] [   2   ] [   3   ] [   /   ]
+// [   ^   ] [  $ £  ] [  # @  ] [   {   ] [   }   ]    [   *   ] [   7   ] [   8   ] [   9   ] [   |   ]
 //                               [ LYDEF ] [ SPACE ]    [   0   ] [ LYALT ]
 //                                            ctrl        shift
 
         symbol_layer {
             bindings = <
-            &kp AMPS   &kp GRAVE  &kp LBKT  &kp RBKT            &eqprcnt       &kp PLUS          &kp NUM_4        &kp NUM_5           &kp NUM_6  &kp BSLH
-            &kp APOS   &kp TILDE  &kp LPAR  &kp RPAR            &qstexcl       &kp MINUS         &kp NUM_1        &kp NUM_2           &kp NUM_3  &kp FSLH
-            &kp CARET  &dlrpnd    &kp LBRC  &kp RBRC            &hshat         &kp ASTRK         &kp NUM_7        &kp NUM_8           &kp NUM_9  &kp PIPE
-                                            &mo_sl LYDEF LYDEF  &mt LCTLR SPC  &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
+            &kp AMPS   &kp GRAVE  &eqprcnt  &kp LBKT            &kp RBKT         &kp PLUS          &kp NUM_4        &kp NUM_5           &kp NUM_6  &kp BSLH
+            &qstexcl   &kp TILDE  &kp APOS  &kp LPAR            &kp RPAR         &kp MINUS         &kp NUM_1        &kp NUM_2           &kp NUM_3  &kp FSLH
+            &kp CARET  &dlrpnd    &hshat    &kp LBRC            &kp RBRC         &kp ASTRK         &kp NUM_7        &kp NUM_8           &kp NUM_9  &kp PIPE
+                                            &mo_sl LYDEF LYDEF  &mt LCTLR SPC    &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
             >;
         };
 
@@ -153,7 +153,7 @@
             &kp N  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &mo 3     &kp LCTL    &kp SPC    &mo 2
+                                           &to LYDEF     &kp LCTL    &kp SPC    &mo 2
             >;
         };
 
@@ -163,7 +163,7 @@
             &kp A  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &mo 3     &kp LCTL    &kp SPC    &mo 2
+                                           &to LYDEF     &kp LCTL    &kp SPC    &mo 2
             >;
         };
 
