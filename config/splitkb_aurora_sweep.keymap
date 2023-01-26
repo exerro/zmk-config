@@ -35,11 +35,20 @@
     behaviours {
         mo_sl: behaviour_mo_sl {
             compatible = "zmk,behavior-hold-tap";
-            label = "ctrl_nav";
+            label = "mo_sl";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sl>;
+        };
+
+        mo_to: behaviour_mo_to {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_to";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&sl>;
+            bindings = <&mo>, <&to>;
         };
 
         kp_sk: behaviour_mp_sk {
@@ -56,7 +65,7 @@
             label = "DOLLAR_POUND";
             #binding-cells = <0>;
             bindings = <&kp DLLR>, <&kp POUND>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
         };
 
         eqper: equals_percent {
@@ -64,7 +73,7 @@
             label = "EQUALS_PERCENT";
             #binding-cells = <0>;
             bindings = <&kp EQUAL>, <&kp PRCNT>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
         };
 
         qstexcl: question_mark_exclamation_mark {
@@ -72,7 +81,7 @@
             label = "QUESTION_MARK_EXCLAMATION_MARK";
             #binding-cells = <0>;
             bindings = <&kp QMARK>, <&kp EXCL>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
         };
 
         hshat: hash_at {
@@ -80,7 +89,31 @@
             label = "HASH_AT";
             #binding-cells = <0>;
             bindings = <&kp NUHS>, <&kp AT>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
+        };
+
+        atrkcrt: asterisk_caret {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ASTERISK_CARET";
+            #binding-cells = <0>;
+            bindings = <&kp ASTRK>, <&kp CARET>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
+        };
+
+        flshbslh: forward_slash_back_slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FORWARD_SLASH_BACK_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
+        };
+
+        amppipe: ampersand_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AMPERSAND_PIPE";
+            #binding-cells = <0>;
+            bindings = <&kp AMPS>, <&kp PIPE>;
+            mods = <(MOD_LSFT, MOD_LCTL)>;
         };
     };
 
@@ -118,7 +151,7 @@
 // LYDEF
 // [   Q   ] [   W   ] [   F   ] [   P   esc   B   ]    [   J   bsp   L   ] [   U   ] [   Y   ] [   _   ]
 // [   A   ] [   R   ] [   S   ] [   T   tab   G   ]    [   M   ret   N   ] [   E   ] [   I   ] [   O   ]
-// [   Z   ] [   X   ] [   C   ] [   D   ] [   V   ]    [   K   ] [   H   ] [   ,   ] [   .   ] [   ;   ]
+// [   Z   ] [   X   ] [   C   ] [   D   ] [   V   ]    [   K   ] [   H   ] [  , <  ] [  . >  ] [  ; :  ]
 //                               [ LYNAV ] [ SPACE ]    [ shift ] [ LYSYM ]
 //                                            ctrl        shift
 
@@ -127,23 +160,23 @@
             &kp Q  &kp W  &kp F  &kp P               &kp B            &kp J                 &kp L               &kp U     &kp Y    &kp UNDER
             &kp A  &kp R  &kp S  &kp T               &kp G            &kp M                 &kp N               &kp E     &kp I    &kp O
             &kp Z  &kp X  &kp C  &kp D               &kp V            &kp K                 &kp H               &kp CMMA  &kp DOT  &kp SCLN
-                                 &mo_sl LYNAV LYNAV  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYSYM LYSYM
+                                 &mo_to LYNAV LYNAV  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYSYM LYSYM
             >;
         };
 
-// LYSYM (WIP)
-// [   &   ] [   `   ] [  = %  ] [   [   esc   ]   ]    [   +   bsp   4   ] [   5   ] [   6   ] [   \   ]
-// [  ? !  ] [   ~   ] [  ' "  ] [   (   tab   )   ]    [   -   ] [   1   ] [   2   ] [   3   ] [   /   ]
-// [   ^   ] [  $ £  ] [  # @  ] [   {   ] [   }   ]    [   *   ] [   7   ] [   8   ] [   9   ] [   |   ]
+// LYSYM
+// [   4   ] [   5   ] [   6   ] [   [   esc   ]   ]    [   +   bsp  = %  ] [  $ £  ] [  & |  ] [   _   ]
+// [   1   ] [   2   ] [   3   ] [   (   tab   )   ]    [   -   ] [  ' "  ] [  ` ~  ] [  ? !  ] [  / \  ]
+// [   7   ] [   8   ] [   9   ] [   {   ] [   }   ]    [  * ^  ] [  # @  ] [  , <  ] [  . >  ] [  ; :  ]
 //                               [ LYDEF ] [ SPACE ]    [   0   ] [ LYALT ]
 //                                            ctrl        shift
 
         symbol_layer {
             bindings = <
-            &kp AMPS   &kp GRAVE  &eqprcnt  &kp LBKT            &kp RBKT         &kp PLUS          &kp NUM_4        &kp NUM_5           &kp NUM_6  &kp BSLH
-            &qstexcl   &kp TILDE  &kp APOS  &kp LPAR            &kp RPAR         &kp MINUS         &kp NUM_1        &kp NUM_2           &kp NUM_3  &kp FSLH
-            &kp CARET  &dlrpnd    &hshat    &kp LBRC            &kp RBRC         &kp ASTRK         &kp NUM_7        &kp NUM_8           &kp NUM_9  &kp PIPE
-                                            &mo_sl LYDEF LYDEF  &mt LCTLR SPC    &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
+            &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp LBKT            &kp RBKT         &kp PLUS          &eqprcnt            &dlrpnd    &amppipe  &kp UNDER
+            &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp LPAR            &kp RPAR         &kp MINUS         &kp APOS            &kp GRAVE  &qstexcl  &flshbslh
+            &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp LBRC            &kp RBRC         &atrkcrt          &hshat              &kp CMMA   &kp DOT   &kp SCLN
+                                             &mo_to LYDEF LYDEF  &mt LCTLR SPC    &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
             >;
         };
 
