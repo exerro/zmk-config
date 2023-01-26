@@ -65,7 +65,7 @@
             label = "DOLLAR_POUND";
             #binding-cells = <0>;
             bindings = <&kp DLLR>, <&kp POUND>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
         eqper: equals_percent {
@@ -73,7 +73,7 @@
             label = "EQUALS_PERCENT";
             #binding-cells = <0>;
             bindings = <&kp EQUAL>, <&kp PRCNT>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
         qstexcl: question_mark_exclamation_mark {
@@ -81,7 +81,7 @@
             label = "QUESTION_MARK_EXCLAMATION_MARK";
             #binding-cells = <0>;
             bindings = <&kp QMARK>, <&kp EXCL>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
         hshat: hash_at {
@@ -89,7 +89,7 @@
             label = "HASH_AT";
             #binding-cells = <0>;
             bindings = <&kp NUHS>, <&kp AT>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
         atrkcrt: asterisk_caret {
@@ -97,7 +97,7 @@
             label = "ASTERISK_CARET";
             #binding-cells = <0>;
             bindings = <&kp ASTRK>, <&kp CARET>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
         flshbslh: forward_slash_back_slash {
@@ -105,7 +105,7 @@
             label = "FORWARD_SLASH_BACK_SLASH";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp BSLH>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
         amppipe: ampersand_pipe {
@@ -113,7 +113,7 @@
             label = "AMPERSAND_PIPE";
             #binding-cells = <0>;
             bindings = <&kp AMPS>, <&kp PIPE>;
-            mods = <(MOD_LSFT, MOD_LCTL)>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
         };
     };
 
@@ -166,7 +166,7 @@
 
 // LYSYM
 // [   4   ] [   5   ] [   6   ] [   [   esc   ]   ]    [   +   bsp  = %  ] [  $ £  ] [  & |  ] [   _   ]
-// [   1   ] [   2   ] [   3   ] [   (   tab   )   ]    [   -   ] [  ' "  ] [  ` ~  ] [  ? !  ] [  / \  ]
+// [   1   ] [   2   ] [   3   ] [   (   tab   )   ]    [   -   ret  ' "  ] [  ` ~  ] [  ? !  ] [  / \  ]
 // [   7   ] [   8   ] [   9   ] [   {   ] [   }   ]    [  * ^  ] [  # @  ] [  , <  ] [  . >  ] [  ; :  ]
 //                               [ LYDEF ] [ SPACE ]    [   0   ] [ LYALT ]
 //                                            ctrl        shift
