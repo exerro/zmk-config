@@ -68,7 +68,7 @@
             mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
-        eqper: equals_percent {
+        eqprcnt: equals_percent {
             compatible = "zmk,behavior-mod-morph";
             label = "EQUALS_PERCENT";
             #binding-cells = <0>;
