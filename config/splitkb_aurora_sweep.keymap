@@ -75,9 +75,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        qwfpb  jluy.
-        arstg  mneio
-        zxcdv  kh,;/
+        // qwfpb  jluy.
+        // arstg  mneio
+        // zxcdv  kh,;/
 
         // LYDEF
         default_layer {
