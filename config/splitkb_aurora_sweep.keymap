@@ -32,10 +32,21 @@
 // };
 
 / {
+    behaviours {
+        ctrl_nav {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ctrl_nav";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHIFT>, <&to LYNAV>;
+        };
+    }
+
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
+        combo_escape {
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&kp ESC>;
@@ -46,22 +57,41 @@
             key-positions = <13 14>;
             bindings = <&kp TAB>;
         };
+        };
+        
+        combo_backspace {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp BKSP>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        // LYDEF
+// LYDEF
+// [   Q   ] [   W   ] [   F   ] [   P   esc   B   ]    [   J   ] [   L   ] [   U   ] [   Y   ] [   .   ]
+// [   A   ] [   R   ] [   S   ] [   T   tab   G   ]    [   M   bsp   N   ] [   E   ] [   I   ] [   O   ]
+// [   Z   ] [   X   ] [   C   ] [   D   ] [   V   ]    [   K   ] [   H   ] [   ,   ] [   ;   ] [   _   ]
+//                               [ LYNAV ] [ SPACE ]    [ ENTER ] [ LYSYM ]
+//                                  ctrl      ~alt        shift
+
         default_layer {
             bindings = <
-            &kp Q  &kp W  &kp F  &kp P           &kp B            &kp J           &kp L      &kp U     &kp Y     &kp DOT
-            &kp A  &kp R  &kp S  &kp T           &kp G            &kp M           &kp N      &kp E     &kp I     &kp O
-            &kp Z  &kp X  &kp C  &kp D           &kp V            &kp K           &kp H      &kp CMMA  &kp SCLN  &kp UNDER
-                                 &mt LCTRL BKSP  &lt LYALT SPC    &mt LSHIFT RET  &to LYSYM
+            &kp Q  &kp W  &kp F  &kp P      &kp B            &kp J           &kp L      &kp U     &kp Y     &kp DOT
+            &kp A  &kp R  &kp S  &kp T      &kp G            &kp M           &kp N      &kp E     &kp I     &kp O
+            &kp Z  &kp X  &kp C  &kp D      &kp V            &kp K           &kp H      &kp CMMA  &kp SCLN  &kp UNDER
+                                 &ctrl_nav  &lt LYALT SPC    &mt LSHIFT RET  &to LYSYM
             >;
         };
 
-        // LYSYM
+// LYSYM (WIP)
+// [       ] [       ] [       ] [       ] [       ]    [       ] [   4   ] [   5   ] [   6   ] [       ]
+// [       ] [       ] [       ] [       ] [       ]    [       ] [   1   ] [   2   ] [   3   ] [       ]
+// [       ] [       ] [       ] [       ] [       ]    [       ] [   7   ] [   8   ] [   9   ] [       ]
+//                               [ LYDEF ] [       ]    [   0   ] [ LY??? ]
+//                                                        shift
+
         symbol_layer {
             bindings = <
             &kp NUM_1  &kp NUM_2  &kp NUM_3        &kp NUM_4        &kp NUM_5     &kp NUM_6  &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp NUM_0
@@ -74,7 +104,7 @@
         // LYNAV
         navigation_layer {
             bindings = <
-            &kp BANG  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
+            &kp N  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
                                            &mo 3     &kp LCTL    &kp SPC    &mo 2
@@ -84,7 +114,7 @@
         // LYALT
         alt_layer {
             bindings = <
-            &kp BANG  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
+            &kp A  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
             &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
             &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
                                            &mo 3     &kp LCTL    &kp SPC    &mo 2
