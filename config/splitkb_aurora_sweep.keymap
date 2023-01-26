@@ -7,13 +7,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/rgb.h>
+// #include <dt-bindings/zmk/rgb.h>
 
 #define LYDEF 0
 #define LYSYM 1
 #define LYNAV 2
 #define LYALT 3
-#define LYFUN 4
+// #define LYFUN 4
 
 &mt {
     // flavor = "tap-preferred";
@@ -27,9 +27,9 @@
 //     };
 // };
 
-&led_strip {
-    chain-length = <8>;
-};
+// &led_strip {
+//     chain-length = <8>;
+// };
 
 / {
     combos {
@@ -51,17 +51,13 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // qwfpb  jluy.
-        // arstg  mneio
-        // zxcdv  kh,;/
-
         // LYDEF
         default_layer {
             bindings = <
-            &kp Q       &kp W  &kp F  &kp P           &kp B            &kp J           &kp L      &kp U     &kp Y     &kp DOT
-            &kp A       &kp R  &kp S  &kp T           &kp G            &kp M           &kp N      &kp E     &kp I     &kp O
-            &mt LSFT Z  &kp X  &kp C  &kp D           &kp V            &kp K           &kp H      &kp CMMA  &kp SCLN  &mt FSLH
-                                      &mt LCTRL BKSP  &lt LYALT SPC    &mt LSHIFT RET  &to LYSYM
+            &kp Q  &kp W  &kp F  &kp P           &kp B            &kp J           &kp L      &kp U     &kp Y     &kp DOT
+            &kp A  &kp R  &kp S  &kp T           &kp G            &kp M           &kp N      &kp E     &kp I     &kp O
+            &kp Z  &kp X  &kp C  &kp D           &kp V            &kp K           &kp H      &kp CMMA  &kp SCLN  &kp UNDER
+                                 &mt LCTRL BKSP  &lt LYALT SPC    &mt LSHIFT RET  &to LYSYM
             >;
         };
 
@@ -96,13 +92,13 @@
         };
 
         // LYFUN
-        fun_layer {
-            bindings = <
-            &kp BANG  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
-            &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
-            &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &mo 3     &kp LCTL    &kp SPC    &mo 2
-            >;
-        };
+        // fun_layer {
+        //     bindings = <
+        //     &kp BANG  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
+        //     &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
+        //     &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
+        //                                    &mo 3     &kp LCTL    &kp SPC    &mo 2
+        //     >;
+        // };
     };
 };
