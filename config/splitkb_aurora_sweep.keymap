@@ -333,7 +333,7 @@
 //                                   V       space
         fun_layer {
             bindings = <
-            &kp esctb   &kp Q   &kp W   &kp E   &kp R      &trans  &trans  &trans  &trans  &trans
+            &esctb      &kp Q   &kp W   &kp E   &kp R      &trans  &trans  &trans  &trans  &trans
             &kp LSHIFT  &kp A   &kp S   &kp D   &kp F      &trans  &trans  &trans  &trans  &trans
             &kp LCTLR   &kp Z   &kp X   &kp C   &kp B      &trans  &trans  &trans  &trans  &trans
                                         &vt     &kp SPC    &trans  &to LYDEF
