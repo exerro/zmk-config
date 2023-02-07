@@ -317,9 +317,9 @@
 
         navigation_layer {
             bindings = <
-            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_COPY       &trans                &kp HOME            &kp UP    &kp END    &kp PSCRN
-            &kp ESC      &kp TAB               &kp ENTER               &kp BKSP       &kp K_PASTE      &trans                &kp LEFT            &kp DOWN  &kp RIGHT  &kp DEL
-            &kp QMARK    &kp K_REFRESH         &kp K_BACK              &kp K_FORWARD  &kp K_CUT        &to LYFUN             &kp PG_DN           &trans    &kp PG_UP  &kp K_LOCK
+            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_COPY       &trans                &kp HOME            &kp UP     &kp END    &kp PSCRN
+            &kp ESC      &kp TAB               &kp ENTER               &kp BKSP       &kp K_PASTE      &trans                &kp LEFT            &kp DOWN   &kp RIGHT  &kp DEL
+            &kp QMARK    &kp K_REFRESH         &kp K_BACK              &kp K_FORWARD  &kp K_CUT        &trans                &kp PG_DN           &to LYFUN  &kp PG_UP  &kp K_LOCK
                                                                        &to LYDEF      &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
             >;
         };
@@ -333,9 +333,9 @@
 //                                   V       space
         fun_layer {
             bindings = <
-            &esctb      &kp Q   &kp W   &kp E   &kp R      &trans  &trans  &trans  &trans  &trans
-            &kp LSHIFT  &kp A   &kp S   &kp D   &kp F      &trans  &trans  &trans  &trans  &trans
-            &kp LCTLR   &kp Z   &kp X   &kp C   &kp B      &trans  &trans  &trans  &trans  &trans
+            &esctb      &kp Q   &kp W   &kp E   &kp R      &kp Y   &kp U      &kp I    &kp O     &kp P
+            &kp LSHIFT  &kp A   &kp S   &kp D   &kp F      &kp G   &kp H      &kp J    &kp K     &kp L
+            &kp LCTRL   &kp Z   &kp X   &kp C   &kp B      &kp N   &kp M      &kp DOT  &kp CMMA  &kp SLASH
                                         &vt     &kp SPC    &trans  &to LYDEF
             >;
         };
