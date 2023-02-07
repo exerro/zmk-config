@@ -12,8 +12,7 @@
 #define LYDEF 0
 #define LYSYM 1
 #define LYNAV 2
-#define LYALT 3
-#define LYFUN 4
+#define LYFUN 3
 
 &mt {
     // flavor = "tap-preferred";
@@ -69,11 +68,35 @@
             mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
-        qstexcl: question_mark_exclamation_mark {
+        grvlngl: grave_left_angle {
             compatible = "zmk,behavior-mod-morph";
-            label = "QUESTION_MARK_EXCLAMATION_MARK";
+            label = "GRAVE_LEFT_ANGLE";
             #binding-cells = <0>;
-            bindings = <&kp QMARK>, <&kp EXCL>;
+            bindings = <&kp GRAVE>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        }
+
+        tldrngl: tilde_right_angle {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TILDE_RIGHT_ANGLE";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        }
+
+        cmmaqst: comma_question_mark {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_QUESTION_MARK";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        }
+
+        dotexcl: dot_exclamation_mark {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_EXCLAMATION_MARK";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
         };
 
@@ -84,6 +107,14 @@
             bindings = <&kp NUHS>, <&kp AT>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
         };
+
+        mnspls: minus_plus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUS_PLUS";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp PLUS>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        }
 
         atrkcrt: asterisk_caret {
             compatible = "zmk,behavior-mod-morph";
@@ -108,88 +139,170 @@
             bindings = <&kp AMPS>, <&kp PIPE>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
         };
+
+        nf0: nf0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF0";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_0>, <&kp F10>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf1: nf1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF1";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_1>, <&kp F1>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf2: nf2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF2";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_2>, <&kp F2>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf3: nf3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF3";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_3>, <&kp F3>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf4: nf4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF4";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_4>, <&kp F4>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf5: nf5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF5";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_5>, <&kp F5>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+    
+        nf6: nf6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF6";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_6>, <&kp F6>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf7: nf7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF7";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_7>, <&kp F7>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf8: nf8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF8";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_8>, <&kp F8>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
+
+        nf9: nf9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NF9";
+            #binding-cells = <0>;
+            bindings = <&kp NUM_9>, <&kp F9>;
+            mods = <(MOD_LSFT|MOD_LCTL)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        combo_escape {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_escape {
-            timeout-ms = <50>;
-            key-positions = <5 6>;
-            bindings = <&kp BKSP>;
-        };
-        
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp TAB>;
-        };
-        
-        combo_backspace {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp RET>;
-        };
+//        combo_escape {
+//            timeout-ms = <20>;
+//            key-positions = <3 4>;
+//            bindings = <&kp ESC>;
+//        };
+//
+//        combo_backspace {
+//            timeout-ms = <20>;
+//            key-positions = <5 6>;
+//            bindings = <&kp BKSP>;
+//        };
+//
+//        combo_tab {
+//            timeout-ms = <20>;
+//            key-positions = <13 14>;
+//            bindings = <&kp TAB>;
+//        };
+//
+//        combo_return {
+//            timeout-ms = <20>;
+//            key-positions = <15 16>;
+//            bindings = <&kp RET>;
+//        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
 // LYDEF
-// [   Q   ] [   W   ] [   F   ] [   P   esc   B   ]    [   J   bsp   L   ] [   U   ] [   Y   ] [   _   ]
+// [   Q   ] [   W   ] [   F   ] [   P   esc   B   ]    [   J   bsp   L   ] [   U   ] [   Y   ] [   Z   ]
 // [   A   ] [   R   ] [   S   ] [   T   tab   G   ]    [   M   ret   N   ] [   E   ] [   I   ] [   O   ]
-// [   Z   ] [   X   ] [   C   ] [   D   ] [   V   ]    [   K   ] [   H   ] [  , <  ] [  . >  ] [  ; :  ]
-//                               [ LYSYM ] [ SPACE ]    [ shift ] [ LYNAV ]
+// [   _   ] [   X   ] [   C   ] [   D   ] [   V   ]    [   K   ] [   H   ] [  , ?  ] [  . !  ] [  ; :  ]
+//                               [ LYSYM ] [ space ]    [ shift ] [ LYNAV ]
 //                                            ctrl        shift
 
         default_layer {
             bindings = <
-            &kp Q  &kp W  &kp F  &kp P               &kp B            &kp J                 &kp L               &kp U     &kp Y    &kp UNDER
-            &kp A  &kp R  &kp S  &kp T               &kp G            &kp M                 &kp N               &kp E     &kp I    &kp O
-            &kp Z  &kp X  &kp C  &kp D               &kp V            &kp K                 &kp H               &kp CMMA  &kp DOT  &kp SCLN
-                                 &mo_to LYSYM LYSYM  &mt LCTRL SPC    &kp_sk QMARK D  &mo_sl LYNAV LYNAV
+            &kp Q      &kp W  &kp F  &kp P               &kp B            &kp J                 &kp L               &kp U     &kp Y     &kp Z
+            &kp A      &kp R  &kp S  &kp T               &kp G            &kp M                 &kp N               &kp E     &kp I     &kp O
+            &kp UNDER  &kp X  &kp C  &kp D               &kp V            &kp K                 &kp H               &cmmaqst  &dotexcl  &kp SCLN
+                                     &mo_to LYSYM LYSYM  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
             >;
         };
 
 // LYSYM
-// [   4   ] [   5   ] [   6   ] [   [   esc   ]   ]    [   +   bsp  = %  ] [  $ £  ] [  & |  ] [   _   ]
-// [   1   ] [   2   ] [   3   ] [   (   tab   )   ]    [   -   ret  ' "  ] [  ` ~  ] [  ? !  ] [  / \  ]
-// [   7   ] [   8   ] [   9   ] [   {   ] [   }   ]    [  * ^  ] [  # @  ] [  , <  ] [  . >  ] [  ; :  ]
-//                               [ LYDEF ] [ SPACE ]    [   0   ] [ LYALT ]
+// [   5   ] [   6   ] [   7   ] [   8   ] [   9   ]    [   0   ] [   1   ] [   2   ] [   3   ] [   4   ]
+// [  & |  ] [  = %  ] [  ' "  ] [   (   ] [   )   ]    [   ]   ] [   [   ] [  ` <  ] [  ~ >  ] [  / \  ]
+// [   _   ] [  $ £  ] [  - +  ] [   {   ] [   }   ]    [  * ^  ] [  # @  ] [  , ?  ] [  . !  ] [  ; :  ]
+//                               [ LYDEF ] [ space ]    [ shift ] [ LYNAV ]
 //                                            ctrl        shift
 
         symbol_layer {
             bindings = <
-            &kp NUM_4  &kp NUM_5  &kp NUM_6  &kp LBKT            &kp RBKT         &kp PLUS          &eqprcnt            &dlrpnd    &amppipe  &kp UNDER
-            &kp NUM_1  &kp NUM_2  &kp NUM_3  &kp LPAR            &kp RPAR         &kp MINUS         &kp APOS            &kp GRAVE  &qstexcl  &flshbslh
-            &kp NUM_7  &kp NUM_8  &kp NUM_9  &kp LBRC            &kp RBRC         &atrkcrt          &hshat              &kp CMMA   &kp DOT   &kp SCLN
-                                             &mo_to LYDEF LYDEF  &mt LCTRL SPC    &mt LSHIFT NUM_0  &mo_sl LYALT LYALT
+            &nf5       &nf6      &nf7      &nf8       &nf9             &nf0                  &nf1                &nf2      &nf3      &nf4
+            &amppipe   &eqprcnt  &kp APOS  &kp LPAR   &kp RPAR         &kp RBKT              &kp LBKT            &grvlngl  &tldrngl  &flshbslh
+            &kp UNDER  &dlrpnd   &mnspls   &kp LBRC   &kp RBRC         &atrkcrt              &hshat              &cmmaqst  &dotexcl  &kp SCLN
+                                           &to LYDEF  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
             >;
         };
 
-        // LYNAV
+// TODO:
+// * Alt+tab
+// * notes, music
+// * play/pause, volume-up/down, record
+// * K_SCROLL_UP K_SCROLL_DOWN
+// * K_NEXT, K_PREV, K_SELECT
+// LYNAV
+// [  msg  ] [  code ] [ trmnl ] [ brwsr ] [  copy ]    [       ] [  home ] [   up  ] [  end  ] [ prscn ]
+// [  esc  ] [  tab  ] [ enter ] [ bkspc ] [ paste ]    [       ] [  left ] [  down ] [ right ] [  del  ]
+// [ tkmgr ] [ rfrsh ] [  bck  ] [  fwd  ] [  cut  ]    [       ] [ pgdwn ] [       ] [  pgup ] [  lck  ]
+//                               [ LYDEF ] [ space ]    [ shift ] [ LYSYM ]
+//                                            ctrl        shift
+
         navigation_layer {
             bindings = <
-            &kp N  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
-            &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
-            &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &to LYDEF     &kp LCTRL    &kp SPC    &mo 2
-            >;
-        };
-
-        // LYALT
-        alt_layer {
-            bindings = <
-            &kp A  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
-            &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
-            &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &to LYDEF     &kp LCTRL    &kp SPC    &mo 2
+            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_COPY       &trans                &kp HOME            &kp UP    &kp END    &kp PSCRN
+            &kp ESC      &kp TAB               &kp ENTER               &kp BKSP       &kp K_PASTE      &trans                &kp LEFT            &kp DOWN  &kp RIGHT  &kp DEL
+            &kp QMARK    &kp K_REFRESH         &kp K_BACK              &kp K_FORWARD  &kp K_CUT        &trans                &kp PG_DN           &trans    &kp PG_UP  &kp K_LOCK
+                                                                       &to LYDEF      &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
             >;
         };
 
