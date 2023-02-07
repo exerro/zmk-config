@@ -74,7 +74,7 @@
             #binding-cells = <0>;
             bindings = <&kp GRAVE>, <&kp LT>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
-        }
+        };
 
         tldrngl: tilde_right_angle {
             compatible = "zmk,behavior-mod-morph";
@@ -82,7 +82,7 @@
             #binding-cells = <0>;
             bindings = <&kp TILDE>, <&kp GT>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
-        }
+        };
 
         cmmaqst: comma_question_mark {
             compatible = "zmk,behavior-mod-morph";
@@ -90,7 +90,7 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp QMARK>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
-        }
+        };
 
         dotexcl: dot_exclamation_mark {
             compatible = "zmk,behavior-mod-morph";
@@ -114,7 +114,7 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp PLUS>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
-        }
+        };
 
         atrkcrt: asterisk_caret {
             compatible = "zmk,behavior-mod-morph";
@@ -219,6 +219,24 @@
             bindings = <&kp NUM_9>, <&kp F9>;
             mods = <(MOD_LSFT|MOD_LCTL)>;
         };
+
+        esctb: escape_tab {
+            compatible = "zmk,behavior-hold-tap";
+            label = "escape_tab";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp TAB>, <&kp ESC>;
+        };
+
+        vt: vt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "vt";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <100>;
+            bindings = <&kp V>, <&kp T>;
+        };
     };
 
     combos {
@@ -293,7 +311,7 @@
 // LYNAV
 // [  msg  ] [  code ] [ trmnl ] [ brwsr ] [  copy ]    [       ] [  home ] [   up  ] [  end  ] [ prscn ]
 // [  esc  ] [  tab  ] [ enter ] [ bkspc ] [ paste ]    [       ] [  left ] [  down ] [ right ] [  del  ]
-// [ tkmgr ] [ rfrsh ] [  bck  ] [  fwd  ] [  cut  ]    [       ] [ pgdwn ] [       ] [  pgup ] [  lck  ]
+// [ tkmgr ] [ rfrsh ] [  bck  ] [  fwd  ] [  cut  ]    [       ] [ pgdwn ] [ LYFUN ] [  pgup ] [  lck  ]
 //                               [ LYDEF ] [ space ]    [ shift ] [ LYSYM ]
 //                                            ctrl        shift
 
@@ -301,18 +319,24 @@
             bindings = <
             &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_COPY       &trans                &kp HOME            &kp UP    &kp END    &kp PSCRN
             &kp ESC      &kp TAB               &kp ENTER               &kp BKSP       &kp K_PASTE      &trans                &kp LEFT            &kp DOWN  &kp RIGHT  &kp DEL
-            &kp QMARK    &kp K_REFRESH         &kp K_BACK              &kp K_FORWARD  &kp K_CUT        &trans                &kp PG_DN           &trans    &kp PG_UP  &kp K_LOCK
+            &kp QMARK    &kp K_REFRESH         &kp K_BACK              &kp K_FORWARD  &kp K_CUT        &to LYFUN             &kp PG_DN           &trans    &kp PG_UP  &kp K_LOCK
                                                                        &to LYDEF      &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
             >;
         };
 
-        // LYFUN
+// LYFUN
+// TODO: M (map)
+// [ esctb ] [   Q   ] [   W   ] [   E   ] [   R   ]    [   Y   ] [   U   ] [   I   ] [   O   ] [   P   ]
+// [ shift ] [   A   ] [   S   ] [   D   ] [   F   ]    [   G   ] [   H   ] [   J   ] [   K   ] [   L   ]
+// [  ctrl ] [   Z   ] [   X   ] [   C   ] [   B   ]    [   N   ] [   M   ] [  , <  ] [  . >  ] [  / ?  ]
+//                               [   T   ] [ space ]    [       ] [ LYDEF ]
+//                                   V       space
         fun_layer {
             bindings = <
-            &kp F  &kp ATSN   &kp HASH  &kp DLLR  &kp PRCT    &kp CRRT   &kp AMPS      &kp KMLT  &kp LPRN  &kp RPRN
-            &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN    &kp MINUS  &kp KP_EQUAL  &kp LBRC  &kp RBRC  &kp BKSP
-            &kp LSFT  &kp KPLS   &kp LBKT  &kp RBKT  &kp BSLH    &kp UNDER  &kp LEFT      &kp DOWN  &kp UP    &kp RIGHT
-                                           &mo 3     &kp LCTRL    &kp SPC    &mo 2
+            &kp esctb   &kp Q   &kp W   &kp E   &kp R      &trans  &trans  &trans  &trans  &trans
+            &kp LSHIFT  &kp A   &kp S   &kp D   &kp F      &trans  &trans  &trans  &trans  &trans
+            &kp LCTLR   &kp Z   &kp X   &kp C   &kp B      &trans  &trans  &trans  &trans  &trans
+                                        &vt     &kp SPC    &trans  &to LYDEF
             >;
         };
     };
