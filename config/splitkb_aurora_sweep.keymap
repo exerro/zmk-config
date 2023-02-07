@@ -223,7 +223,7 @@
         esctb: escape_tab {
             compatible = "zmk,behavior-hold-tap";
             label = "escape_tab";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp TAB>, <&kp ESC>;
@@ -232,7 +232,7 @@
         vt: vt {
             compatible = "zmk,behavior-hold-tap";
             label = "vt";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <100>;
             bindings = <&kp V>, <&kp T>;
