@@ -273,45 +273,50 @@
             &kp Q      &kp W  &kp F  &kp P               &kp B            &kp J                 &kp L               &kp U     &kp Y     &kp Z
             &kp A      &kp R  &kp S  &kp T               &kp G            &kp M                 &kp N               &kp E     &kp I     &kp O
             &kp UNDER  &kp X  &kp C  &kp D               &kp V            &kp K                 &kp H               &cmmaqst  &dotexcl  &kp SCLN
-                                     &mo_to LYSYM LYSYM  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
+                                     &mo_to LYSYM LYSYM  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_to LYNAV LYNAV
             >;
         };
 
 // LYSYM
 // [   5   ] [   6   ] [   7   ] [   8   ] [   9   ]    [   0   ] [   1   ] [   2   ] [   3   ] [   4   ]
-// [  & |  ] [  = %  ] [  ' "  ] [   (   ] [   )   ]    [   ]   ] [   [   ] [  ` <  ] [  ~ >  ] [  / \  ]
-// [   _   ] [  $ £  ] [  - +  ] [   {   ] [   }   ]    [  * ^  ] [  # @  ] [  , ?  ] [  . !  ] [  ; :  ]
+// [  & |  ] [  = %  ] [  ' "  ] [   (   ] [   ]   ]    [   )   ] [   [   ] [  ` <  ] [  ~ >  ] [  / \  ]
+// [   _   ] [  $ £  ] [  - +  ] [   {   ] [  * ^  ]    [   }   ] [  # @  ] [  , ?  ] [  . !  ] [  ; :  ]
 //                               [ LYDEF ] [ space ]    [ shift ] [ LYNAV ]
 //                                            ctrl        shift
 
         symbol_layer {
             bindings = <
             &nf5       &nf6      &nf7      &nf8       &nf9             &nf0                  &nf1                &nf2      &nf3      &nf4
-            &amppipe   &eqprcnt  &kp APOS  &kp LPAR   &kp RPAR         &kp RBKT              &kp LBKT            &grvlngl  &tldrngl  &flshbslh
-            &kp UNDER  &dlrpnd   &mnspls   &kp LBRC   &kp RBRC         &atrkcrt              &hshat              &cmmaqst  &dotexcl  &kp SCLN
-                                           &to LYDEF  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
+            &amppipe   &eqprcnt  &kp APOS  &kp LPAR   &kp RBKT         &kp RPAR              &kp LBKT            &grvlngl  &tldrngl  &flshbslh
+            &kp UNDER  &dlrpnd   &mnspls   &kp LBRC   &atrkcrt         &kp RBRC              &hshat              &cmmaqst  &dotexcl  &kp SCLN
+                                           &to LYDEF  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_to LYNAV LYNAV
             >;
         };
+
+// copy+paste+cut no work
+// back no work
+// undo no work?
 
 // TODO:
 // * Alt+tab
 // * notes, music
+// * forward
 // * play/pause, volume-up/down, record
 // * K_SCROLL_UP K_SCROLL_DOWN
 // * K_NEXT, K_PREV, K_SELECT
 // LYNAV
-// [  msg  ] [  code ] [ trmnl ] [ brwsr ] [  copy ]    [       ] [  home ] [   up  ] [  end  ] [ prscn ]
-// [  esc  ] [  tab  ] [ enter ] [ bkspc ] [ paste ]    [       ] [  left ] [  down ] [ right ] [  del  ]
-// [ tkmgr ] [ rfrsh ] [  bck  ] [  fwd  ] [  cut  ]    [       ] [ pgdwn ] [ LYFUN ] [  pgup ] [  lck  ]
+// [  msg  ] [  code ] [ trmnl ] [ brwsr ] [  cut  ]    [  pgup ] [  home ] [   up  ] [  end  ] [ prscn ]
+// [  esc  ] [  tab  ] [ bkspc ] [ enter ] [  copy ]    [ pgdwn ] [  left ] [  down ] [ right ] [  del  ]
+// [ tkmgr ] [ LYFUN ] [  bck  ] [ wn+tb ] [ paste ]    [       ] [  undo ] [       ] [  redo ] [  lck  ]
 //                               [ LYDEF ] [ space ]    [ shift ] [ LYSYM ]
 //                                            ctrl        shift
 
         navigation_layer {
             bindings = <
-            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_COPY       &trans                &kp HOME            &kp UP     &kp END    &kp PSCRN
-            &kp ESC      &kp TAB               &kp ENTER               &kp BKSP       &kp K_PASTE      &trans                &kp LEFT            &kp DOWN   &kp RIGHT  &kp DEL
-            &kp QMARK    &kp K_REFRESH         &kp K_BACK              &kp K_FORWARD  &kp K_CUT        &trans                &kp PG_DN           &to LYFUN  &kp PG_UP  &kp K_LOCK
-                                                                       &to LYDEF      &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_sl LYNAV LYNAV
+            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_CUT        &kp PG_UP             &kp HOME            &kp UP     &kp END     &kp PSCRN
+            &kp ESC      &kp TAB               &kp BKSP                &kp ENTER      &kp K_COPY       &kp PG_DN             &kp LEFT            &kp DOWN   &kp RIGHT   &kp DEL
+            &kp QMARK    &to LYFUN             &kp K_BACK              &kp K_FORWARD  &kp K_PASTE      &trans                &kp K_UNDO          &trans     &kp K_REDO  &kp K_LOCK
+                                                                       &to LYDEF      &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_to LYSYM LYSYM
             >;
         };
 
