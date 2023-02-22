@@ -24,6 +24,49 @@
 };
 
 / {
+    macros {
+        win_tab: win_tab {
+            label = "win_tab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LWIN>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LWIN>
+                ;
+        };
+
+        ly_def: ly_def {
+            label = "ly_def";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to LYDEF>
+                , <&rgb_ug RGB_COLOR_HSB(200,40,50)>
+                ;
+        };
+
+        ly_sym: ly_sym {
+            label = "ly_sym";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to LYSYM>
+                , <&rgb_ug RGB_COLOR_HSB(50,40,50)>
+                ;
+        };
+
+        ly_nav: ly_nav {
+            label = "ly_nav";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to LYNAV>
+                , <&rgb_ug RGB_COLOR_HSB(270,40,50)>
+                ;
+        };
+    };
+
     behaviours {
         mo_sl: behaviour_mo_sl {
             compatible = "zmk,behavior-hold-tap";
@@ -233,29 +276,29 @@
     combos {
         compatible = "zmk,combos";
 
-//        combo_escape {
-//            timeout-ms = <20>;
-//            key-positions = <3 4>;
-//            bindings = <&kp ESC>;
-//        };
-//
-//        combo_backspace {
-//            timeout-ms = <20>;
-//            key-positions = <5 6>;
-//            bindings = <&kp BKSP>;
-//        };
-//
 //        combo_tab {
 //            timeout-ms = <20>;
-//            key-positions = <13 14>;
+//            key-positions = <3 4>;
 //            bindings = <&kp TAB>;
 //        };
-//
-//        combo_return {
-//            timeout-ms = <20>;
-//            key-positions = <15 16>;
-//            bindings = <&kp RET>;
-//        };
+
+        combo_backspace {
+            timeout-ms = <20>;
+            key-positions = <5 6>;
+            bindings = <&kp BKSP>;
+        };
+
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <13 14>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_return {
+            timeout-ms = <20>;
+            key-positions = <15 16>;
+            bindings = <&kp RET>;
+        };
     };
 
     keymap {
@@ -270,10 +313,10 @@
 
         default_layer {
             bindings = <
-            &kp Q      &kp W  &kp F  &kp P               &kp B            &kp J                 &kp L               &kp U     &kp Y     &kp Z
-            &kp A      &kp R  &kp S  &kp T               &kp G            &kp M                 &kp N               &kp E     &kp I     &kp O
-            &kp UNDER  &kp X  &kp C  &kp D               &kp V            &kp K                 &kp H               &cmmaqst  &dotexcl  &kp SCLN
-                                     &mo_to LYSYM LYSYM  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_to LYNAV LYNAV
+            &kp Q      &kp W  &kp F  &kp P    &kp B            &kp J                 &kp L    &kp U     &kp Y     &kp Z
+            &kp A      &kp R  &kp S  &kp T    &kp G            &kp M                 &kp N    &kp E     &kp I     &kp O
+            &kp UNDER  &kp X  &kp C  &kp D    &kp V            &kp K                 &kp H    &cmmaqst  &dotexcl  &kp SCLN
+                                     &ly_sym  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &ly_nav
             >;
         };
 
@@ -286,10 +329,10 @@
 
         symbol_layer {
             bindings = <
-            &nf5       &nf6      &nf7      &nf8       &nf9             &nf0                  &nf1                &nf2      &nf3      &nf4
-            &amppipe   &eqprcnt  &kp APOS  &kp LPAR   &kp RBKT         &kp RPAR              &kp LBKT            &grvlngl  &tldrngl  &flshbslh
-            &kp UNDER  &dlrpnd   &mnspls   &kp LBRC   &atrkcrt         &kp RBRC              &hshat              &cmmaqst  &dotexcl  &kp SCLN
-                                           &to LYDEF  &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_to LYNAV LYNAV
+            &nf5       &nf6      &nf7      &nf8      &nf9             &nf0                  &nf1                &nf2      &nf3      &nf4
+            &amppipe   &eqprcnt  &kp APOS  &kp LPAR  &kp RBKT         &kp RPAR              &kp LBKT            &grvlngl  &tldrngl  &flshbslh
+            &kp UNDER  &dlrpnd   &mnspls   &kp LBRC  &atrkcrt         &kp RBRC              &hshat              &cmmaqst  &dotexcl  &kp SCLN
+                                           &ly_def   &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &ly_nav
             >;
         };
 
@@ -308,15 +351,15 @@
 // [  msg  ] [  code ] [ trmnl ] [ brwsr ] [  cut  ]    [  pgup ] [  home ] [   up  ] [  end  ] [ prscn ]
 // [  esc  ] [  tab  ] [ bkspc ] [ enter ] [  copy ]    [ pgdwn ] [  left ] [  down ] [ right ] [  del  ]
 // [ tkmgr ] [ LYFUN ] [  bck  ] [ wn+tb ] [ paste ]    [       ] [  undo ] [       ] [  redo ] [  lck  ]
-//                               [ LYDEF ] [ space ]    [ shift ] [ LYSYM ]
+//                               [ LYSYM ] [ space ]    [ shift ] [ LYDEF ]
 //                                            ctrl        shift
 
         navigation_layer {
             bindings = <
-            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW      &kp K_CUT        &kp PG_UP             &kp HOME            &kp UP     &kp END     &kp PSCRN
-            &kp ESC      &kp TAB               &kp BKSP                &kp ENTER      &kp K_COPY       &kp PG_DN             &kp LEFT            &kp DOWN   &kp RIGHT   &kp DEL
-            &kp QMARK    &to LYFUN             &kp K_BACK              &kp K_FORWARD  &kp K_PASTE      &trans                &kp K_UNDO          &trans     &kp K_REDO  &kp K_LOCK
-                                                                       &to LYDEF      &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &mo_to LYSYM LYSYM
+            &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW  &kp K_CUT        &kp PG_UP             &kp HOME    &kp UP     &kp END     &kp PSCRN
+            &kp ESC      &kp TAB               &kp BKSP                &kp ENTER  &kp K_COPY       &kp PG_DN             &kp LEFT    &kp DOWN   &kp RIGHT   &kp DEL
+            &kp QMARK    &to LYFUN             &kp K_BACK              &win_tab   &kp K_PASTE      &trans                &kp K_UNDO  &trans     &kp K_REDO  &kp K_LOCK
+                                                                       &ly_sum    &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &ly_def
             >;
         };
 
