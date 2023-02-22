@@ -52,7 +52,7 @@
             #binding-cells = <0>;
             bindings
                 = <&to LYSYM>
-                , <&rgb_ug RGB_COLOR_HSB(50,40,50)>
+                , <&rgb_ug RGB_COLOR_HSB(50,100,50)>
                 ;
         };
 
@@ -62,7 +62,7 @@
             #binding-cells = <0>;
             bindings
                 = <&to LYNAV>
-                , <&rgb_ug RGB_COLOR_HSB(270,40,50)>
+                , <&rgb_ug RGB_COLOR_HSB(270,100,50)>
                 ;
         };
     };
