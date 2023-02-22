@@ -277,27 +277,27 @@
         compatible = "zmk,combos";
 
 //        combo_tab {
-//            timeout-ms = <10>;
-//            key-positions = <3 4>;
+//            timeout-ms = <16>;
+//            key-positions = <2 3>;
 //            bindings = <&kp TAB>;
 //        };
 
-        combo_return {
-            timeout-ms = <10>;
-            key-positions = <5 6>;
-            bindings = <&kp RET>;
-        };
-
         combo_tab {
-            timeout-ms = <10>;
-            key-positions = <13 14>;
+            timeout-ms = <16>;
+            key-positions = <12 13>;
             bindings = <&kp TAB>;
         };
 
         combo_backspace {
-            timeout-ms = <10>;
-            key-positions = <15 16>;
+            timeout-ms = <16>;
+            key-positions = <16 17>;
             bindings = <&kp BKSP>;
+        };
+
+        combo_return {
+            timeout-ms = <16>;
+            key-positions = <17 18>;
+            bindings = <&kp RET>;
         };
     };
 
