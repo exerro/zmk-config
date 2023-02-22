@@ -359,7 +359,7 @@
             &kp C_AL_IM  &kp C_AL_TEXT_EDITOR  &kp C_AL_CONTROL_PANEL  &kp K_WWW  &kp K_CUT        &kp PG_UP             &kp HOME    &kp UP     &kp END     &kp PSCRN
             &kp ESC      &kp TAB               &kp BKSP                &kp ENTER  &kp K_COPY       &kp PG_DN             &kp LEFT    &kp DOWN   &kp RIGHT   &kp DEL
             &kp QMARK    &to LYFUN             &kp K_BACK              &win_tab   &kp K_PASTE      &trans                &kp K_UNDO  &trans     &kp K_REDO  &kp K_LOCK
-                                                                       &ly_sum    &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &ly_def
+                                                                       &ly_sym    &mt LCTRL SPC    &kp_sk LSHIFT LSHIFT  &ly_def
             >;
         };
 
